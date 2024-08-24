@@ -1,4 +1,6 @@
-class Ravenclaw extends Hogwarts {
+package faculty;
+
+public class Ravenclaw extends Hogwarts {
     private int smart;
     private int wise;
     private int witi;
@@ -17,14 +19,19 @@ class Ravenclaw extends Hogwarts {
         return STR."\{super.toString()}; GRavenclaw{smart=\{smart}, wise=\{wise}, witi=\{witi}, fullOfCreativity=\{fullOfCreativity}\{'}'}";
     }
 
-    public static void compareStudents(Ravenclaw student1, Ravenclaw student2) {
-        int sum1 = student1.smart + student1.wise + student1.witi + student1.fullOfCreativity;
-        int sum2 = student2.smart + student2.wise + student2.witi + student2.fullOfCreativity;
+    @Override
+    public void printParametrs() {
+        System.out.println(this);
+    }
+
+    public void compareStudents(Ravenclaw student) {
+        int sum1 = this.smart + this.wise + this.witi + this.fullOfCreativity;
+        int sum2 = student.smart + student.wise + student.witi + student.fullOfCreativity;
 
         if (sum1 > sum2) {
-            System.out.println(STR."\{student1.getName()} лучший Когтевранец, чем \{student2.getName()}");
+            System.out.println(STR."\{this.getName()} лучший Когтевранец, чем \{student.getName()}");
         } else if (sum1 < sum2) {
-            System.out.println(STR."\{student2.getName()} лучший Когтевранец, чем \{student1.getName()}");
+            System.out.println(STR."\{student.getName()} лучший Когтевранец, чем \{this.getName()}");
         } else {
             System.out.println("Студенты равны");
         }

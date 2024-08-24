@@ -1,3 +1,5 @@
+import faculty.*;
+
 import java.util.Random;
 
 public class Main {
@@ -19,18 +21,32 @@ public class Main {
         Ravenclaw padmaPatil = new Ravenclaw("Падма", "Патил ", rnd100(), rnd100(), rnd100(), rnd100(), rnd100(), rnd100());
         Ravenclaw marcusBelby = new Ravenclaw(" Маркус", "Белби ", rnd100(), rnd100(), rnd100(), rnd100(), rnd100(), rnd100());
 
-        System.out.println(hermioneGranger.toString());
-        System.out.println(ronWeaslye.toString());
+//        System.out.println(hermioneGranger.toString());
+//        System.out.println(ronWeaslye.toString());
+//
+//        hermioneGranger.printParametrs();
+//
+//        System.out.println(hermioneGranger.toString());
+//        System.out.println(ronWeaslye.toString());
+//
+//
+//        harryPotter.compareStudents(hermioneGranger);
+//
+//        harryPotter.compareStudents(drakoMalfoy);
+//
+//        padmaPatil.compareStudents(zhouChang);
 
-        Gryffindor.compareStudents(ronWeaslye, hermioneGranger);
+        Hogwarts[] hogwarts = new Hogwarts[]{
+                drakoMalfoy, harryPotter, zachariahSmith, ronWeaslye
+        };
 
-        Hufflepuff.compareStudents(zachariahSmith, justinFinchFletchley);
-
-        Slytherin.compareStudents(grahamMontague, gregoryGoyle);
-
-        System.out.println(zhouChang.toString());
-
-        Hogwarts.compareStudents(zhouChang, hermioneGranger);
+        for (Hogwarts hogwart : hogwarts) {
+            hogwart.printParametrs();
+        }
+        hogwarts[0].compareStudents(hogwarts[3]);
+        if (hogwarts[0] instanceof Gryffindor && hogwarts[3] instanceof Gryffindor) {
+            ((Gryffindor) hogwarts[0]).compareStudents(((Gryffindor) hogwarts[3]));
+        }
     }
 
     public static int rnd100() {

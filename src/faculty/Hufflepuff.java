@@ -1,4 +1,6 @@
-class Hufflepuff extends Hogwarts {
+package faculty;
+
+public class Hufflepuff extends Hogwarts {
     private int hardworking;
     private int loyal;
     private int honest;
@@ -15,14 +17,19 @@ class Hufflepuff extends Hogwarts {
         return STR."\{super.toString()}; GHufflepuff{hardworking=\{hardworking}, loyal=\{loyal}, honest=\{honest}\{'}'}";
     }
 
-    public static void compareStudents(Hufflepuff student1, Hufflepuff student2) {
-        int sum1 = student1.hardworking + student1.loyal + student1.honest;
-        int sum2 = student2.hardworking + student2.loyal + student2.honest;
+    @Override
+    public void printParametrs() {
+        System.out.println(this);
+    }
+
+    public void compareStudents(Hufflepuff student) {
+        int sum1 = this.hardworking + this.loyal + this.honest;
+        int sum2 = student.hardworking + student.loyal + student.honest;
 
         if (sum1 > sum2) {
-            System.out.println(STR."\{student1.getName()} лучший Пуффендуйец, чем \{student2.getName()}");
+            System.out.println(STR."\{this.getName()} лучший Пуффендуйец, чем \{student.getName()}");
         } else if (sum1 < sum2) {
-            System.out.println(STR."\{student2.getName()} лучший Пуффендуйец, чем \{student1.getName()}");
+            System.out.println(STR."\{student.getName()} лучший Пуффендуйец, чем \{this.getName()}");
         } else {
             System.out.println("Студенты равны");
         }

@@ -1,3 +1,5 @@
+package faculty;
+
 public class Slytherin extends Hogwarts {
     private int cunning;
     private int determination;
@@ -19,14 +21,19 @@ public class Slytherin extends Hogwarts {
         return STR."\{super.toString()}; GSlytherin{cunning=\{cunning}, determination=\{determination}, ambition=\{ambition}, resourcefulness=\{resourcefulness}, thirstOfPower=\{thirstOfPower}\{'}'}";
     }
 
-    public static void compareStudents(Slytherin student1, Slytherin student2) {
-        int sum1 = student1.cunning + student1.determination + student1.ambition + student1.resourcefulness + student1.thirstOfPower;
-        int sum2 = student2.cunning + student2.determination + student2.ambition + student2.resourcefulness + student2.thirstOfPower;
+    @Override
+    public void printParametrs() {
+        System.out.println(this);
+    }
+
+    public void compareStudents(Slytherin student) {
+        int sum1 = student.cunning + student.determination + student.ambition + student.resourcefulness + student.thirstOfPower;
+        int sum2 = this.cunning + this.determination + this.ambition + this.resourcefulness + this.thirstOfPower;
 
         if (sum1 > sum2) {
-            System.out.println(STR."\{student1.getName()} лучший Слизеринец, чем \{student2.getName()}");
+            System.out.println(STR."\{student.getName()} лучший Слизеринец, чем \{this.getName()}");
         } else if (sum1 < sum2) {
-            System.out.println(STR."\{student2.getName()} лучший Слизеринец, чем \{student1.getName()}");
+            System.out.println(STR."\{this.getName()} лучший Слизеринец, чем \{student.getName()}");
         } else {
             System.out.println("Студенты равны");
         }
