@@ -18,7 +18,7 @@ public class Slytherin extends Hogwarts {
 
     @Override
     public String toString() {
-        return STR."\{super.toString()}; GSlytherin{cunning=\{cunning}, determination=\{determination}, ambition=\{ambition}, resourcefulness=\{resourcefulness}, thirstOfPower=\{thirstOfPower}\{'}'}";
+        return STR."\{super.toString()}; Slytherin{cunning=\{cunning}, determination=\{determination}, ambition=\{ambition}, resourcefulness=\{resourcefulness}, thirstOfPower=\{thirstOfPower}\{'}'}";
     }
 
     @Override
